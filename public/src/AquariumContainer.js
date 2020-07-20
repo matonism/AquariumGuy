@@ -16,5 +16,5 @@ class AquariumContainer extends React.Component {
     }
 }
 
-let rootAnchor = document.querySelector('.root');
+let rootAnchor = document.querySelector('#root');
 ReactDOM.render(React.createElement(AquariumContainer), rootAnchor);

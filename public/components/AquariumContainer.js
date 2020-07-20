@@ -33,5 +33,5 @@ var AquariumContainer = function (_React$Component) {
     return AquariumContainer;
 }(React.Component);
 
-var rootAnchor = document.querySelector('.root');
+var rootAnchor = document.querySelector('#root');
 ReactDOM.render(React.createElement(AquariumContainer), rootAnchor);

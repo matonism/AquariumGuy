@@ -25,12 +25,21 @@ class ContentSection extends React.Component {
 
     render(){
         return (
-            <div>{this.state.shownContent}</div>
+            <div>
+                <div>{this.state.shownContent}</div>
+                <button onClick={this.handleClick}>Click me</button>
+            </div>
         );
     }
 
+    handleClick = (e) => {
+        debugger;
+        console.log(this);
+        alert('button was clicked');
+    }
+
     
-    changeContent(){
+    changeContent = () => {
         let indexOfCurrentMessage = this.contentScrollOptions.indexOf(this.state.shownContent);
         if(indexOfCurrentMessage == this.contentScrollOptions.length - 1){
             indexOfCurrentMessage = 0;

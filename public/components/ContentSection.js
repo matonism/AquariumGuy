@@ -16,6 +16,23 @@ var ContentSection = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (ContentSection.__proto__ || Object.getPrototypeOf(ContentSection)).call(this, props));
 
+        _this.handleClick = function (e) {
+            debugger;
+            console.log(_this);
+            alert('button was clicked');
+        };
+
+        _this.changeContent = function () {
+            var indexOfCurrentMessage = _this.contentScrollOptions.indexOf(_this.state.shownContent);
+            if (indexOfCurrentMessage == _this.contentScrollOptions.length - 1) {
+                indexOfCurrentMessage = 0;
+            } else {
+                indexOfCurrentMessage++;
+            }
+
+            _this.setState({ shownContent: _this.contentScrollOptions[indexOfCurrentMessage] });
+        };
+
         _this.contentScrollOptions = [props.contentText, 'This is for Josh', 'I am too kind to that guy'];
         _this.state = {
             shownContent: props.contentText
@@ -43,20 +60,17 @@ var ContentSection = function (_React$Component) {
             return React.createElement(
                 'div',
                 null,
-                this.state.shownContent
+                React.createElement(
+                    'div',
+                    null,
+                    this.state.shownContent
+                ),
+                React.createElement(
+                    'button',
+                    { onClick: this.handleClick },
+                    'Click me'
+                )
             );
-        }
-    }, {
-        key: 'changeContent',
-        value: function changeContent() {
-            var indexOfCurrentMessage = this.contentScrollOptions.indexOf(this.state.shownContent);
-            if (indexOfCurrentMessage == this.contentScrollOptions.length - 1) {
-                indexOfCurrentMessage = 0;
-            } else {
-                indexOfCurrentMessage++;
-            }
-
-            this.setState({ shownContent: this.contentScrollOptions[indexOfCurrentMessage] });
         }
     }]);
 
